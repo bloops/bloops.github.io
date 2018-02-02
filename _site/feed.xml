@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-01T23:49:18-08:00</updated><id>http://localhost:4000/</id><title type="html">Anudhyan’s Log</title><subtitle>notes on life, learning and optimization.</subtitle><entry><title type="html">Hello, World!</title><link href="http://localhost:4000/meta/2018/02/01/hello-world.html" rel="alternate" type="text/html" title="Hello, World!" /><published>2018-02-01T22:40:29-08:00</published><updated>2018-02-01T22:40:29-08:00</updated><id>http://localhost:4000/meta/2018/02/01/hello-world</id><content type="html" xml:base="http://localhost:4000/meta/2018/02/01/hello-world.html">&lt;p&gt;Here’s to starting this blog with the archetypal introductory &lt;a href=&quot;http://en.wikipedia.org/wiki/%22Hello,_World!%22_program&quot;&gt;greeting&lt;/a&gt; in computer programming.&lt;/p&gt;
+
+&lt;p&gt;My goals for starting this blog are twofold. Firstly, I want to understand bits of computer science and math better by writing short posts explaining what I learnt. After all, teaching
+is the &lt;a href=&quot;https://lifehacker.com/the-feynman-technique-helps-you-study-faster-and-retain-1790501936&quot;&gt;best&lt;/a&gt; way to learn.&lt;/p&gt;
+
+&lt;p&gt;Secondly, I want to improve my writing skills by practicing regularly, and I’m hoping that
+having a blog would provide extra motivation to write.&lt;/p&gt;
+
+&lt;p&gt;Here is my previous &lt;a href=&quot;http://theprocrastinator.wordpress.com&quot;&gt;attempt&lt;/a&gt; at blogging, from many years ago.&lt;/p&gt;
+
+&lt;p&gt;I hope to have a long-running blog, full of interesting posts!&lt;/p&gt;</content><author><name></name></author><summary type="html">Here’s to starting this blog with the archetypal introductory greeting in computer programming.</summary></entry></feed>
