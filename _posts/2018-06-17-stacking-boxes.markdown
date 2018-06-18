@@ -21,10 +21,10 @@ The problem statement can be summarized as follows:
 > We are given $N$ rectangles with integer widths and heights $(W_1, H_1), (W_2, H_2) \cdots
 > , (W_N, H_N)$.  Box $i$ can be stacked on top of box $j$ if $W_i < W_j$.  However, it is
 > also possible to ‘rotate’ either box by swapping the tuple $ (W_i, H_i)$. Formally, in
-> order to stack box i on top of box j, we need $ X_i < X_j $ where $ X_i \in \{W_i, H_i\} $
-> and $ X_j \in \{W_j, H_j\} $. What is the most number of boxes that can be stacked on top of each
-> other? Formally, we need to find the longest sequence $ \{i_1, i_2, \ldots , i_k\}$ where each
-> $ i_r \in [N] $ such for each $ i_r $, we have a fixed $ X_{i_r} \in \{W_{i_r}, H_{i_r}\} $.
+> order to stack box $i$ on top of box $j$, we need $ X_i < X_j $ where $ X_i \in \\{W_i, H_i\\} $
+> and $ X_j \in \\{W_j, H_j\\} $. What is the most number of boxes that can be stacked on top of each
+> other? Formally, we need to find the longest sequence $ \\{ i_1, i_2, \ldots , i_k\\}$ where each
+> $ i_r \in [N] $ such for each $ i_r $, we have a fixed $ X_{i_r} \in \\{ W_{i_r}, H_{i_r} \\} $.
 
 Here is one problem instance illustrated. Given rectangles $ 1 \times 3, 2 \times 1 $ and
 $ 1 \times 2 $, we can rotate the first rectangle and create the stack $ 1 \times 2 \prec 2
