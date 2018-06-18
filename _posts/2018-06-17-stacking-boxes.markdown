@@ -11,7 +11,8 @@ on HackerRank. Even though I came up with this problem independently, given that
 formulation and an easy solution I wouldn't be surprised if it appeared somewhere else before.
 
 For the complete problem statement including a motivating story, constraints on parameters and
-example instances please check out the problem titled ‘Boxes’.
+example instances please check out the problem titled ‘Boxes’ in the
+[complete list of problems]({{ "/assets/doc/cmi_opc_problems.pdf"}}).
 
 Problem Statement
 -----------------
