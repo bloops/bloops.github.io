@@ -143,22 +143,12 @@ is not a maximum matching. Hence, any maximum matching must include $X_0$. This 
 Putting it all together
 -----------------------
 
-Armed with our observations, we now saw that we can match every number -- well, almost. Boxes
-incident on two numbers both having degree $1$ can only support one of them.
+Armed with our observations, we can now come up with an efficient algorithm to find the maximum
+stack. After constructing the graph, we proceed as follows:
 
-Here is some short python code solving this problem:
+ * As long as numbers have degree 1, we can include them in the solution and delete its
+   corresponding box (along with the box's edge to the other number.)
+ * When there are no numbers with degree 1, we can include all numbers in our solution.
 
-{% highlight python %}
-from collections import Counter
-
-def get_max_stack(boxes):
-  # boxes = [(1, 2), (3, 3), (3, 4)]           # example input of N boxes
-  dims = [dim for box in boxes for dim in box] # flattens to list of nums
-  freq = Counter(dims)                         # counts degree of each num
-  stacksize = len(freq)                        # answer init. to distinct nums
-  for box in boxes:
-    if freq[box[0]] == 1 and freq[box[1]] == 1:
-      stacksize -= 1                           # minus boxes w/ two deg-1 nums
-  return stacksize
-{% endhighlight %}
+The complexity of this solution is $\mathcal{O}(N \log N)$.
 
