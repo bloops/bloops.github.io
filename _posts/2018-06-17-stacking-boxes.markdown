@@ -47,7 +47,7 @@ in understanding some of the nuances of the problem.
 > **Greedy Strategy 2** : Choose the box with the largest width (or height) but break ties such that
 > the box with the smaller other dimension gets selected.
 
-Coming up with counterexamples to strategy 1 and 2 are left as exercise to the reader.
+Coming up with counterexamples to strategies 1 and 2 are left as exercises to the reader. :)
 
 
 First Steps: What if Rotation Wasn’t Allowed
