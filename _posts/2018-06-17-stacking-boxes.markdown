@@ -20,11 +20,13 @@ Problem Statement
 The problem statement can be summarized as follows:
 > We are given $N$ rectangles with integer widths and heights $(W_1, H_1), (W_2, H_2) \cdots
 > , (W_N, H_N)$.  Box $i$ can be stacked on top of box $j$ if $W_i < W_j$.  However, it is
-> also possible to ‘rotate’ either box by swapping the tuple $ (W_i, H_i)$. Formally, in
-> order to stack box $i$ on top of box $j$, we need $ X_i < X_j $ where $ X_i \in \\{W_i, H_i\\} $
-> and $ X_j \in \\{W_j, H_j\\} $. What is the most number of boxes that can be stacked on top of each
-> other? Formally, we need to find the longest sequence $ \\{ i_1, i_2, \ldots , i_k\\}$ where each
-> $ i_r \in [N] $ such for each $ i_r $, we have a fixed $ X_{i_r} \in \\{ W_{i_r}, H_{i_r} \\} $.
+> also possible to ‘rotate’ either box by swapping the tuple $ (W_i, H_i)$. What is the most
+> number of boxes that can be stacked on top of each other?
+
+> Formally, in order to stack box $i$ on top of box $j$, we need $ X_i < X_j $ where
+> $ X_i \in \\{W_i, H_i\\} $ and $ X_j \in \\{W_j, H_j\\} $. We want to find the longest sequence
+> $ \\{ i_1, i_2, \ldots , i_k\\}$ where each $ i_r \in [N] $ such for each $ i_r $, we have a
+> fixed $ X_{i_r} \in \\{ W_{i_r}, H_{i_r} \\} $.
 
 Here is one problem instance illustrated. Given rectangles $ 1 \times 3, 2 \times 1 $ and
 $ 1 \times 2 $, we can rotate the first rectangle and create the stack $ 1 \times 2 \prec 2
@@ -80,7 +82,8 @@ Consider a bipartite graph, where the numbers are on the left hand side and boxe
 hand side. Each box $(W, H)$ on the RHS has exactly two edges, one to Node $W$ and another
 to Node $H$. 
 
-> TODO: image illustrating graph for 1x3, 2x1 and 1x2
+![Corresponding Bipartite Graph for Boxes (1x3),(2x1),(1x2) Illustrated]({{ "/assets/img/boxes_graph.png"}}){: height="360px"}
+
 
 In case $W = H$, we can just delete the box, remove the node $W (=H)$ from the graph and add
 +1 to our objective. Also, if a number $X$ has only one edge corresponding to a single box, say
@@ -114,9 +117,9 @@ the RHS has degree exactly $2$, it must be incident on at least $(2|S|)/2 = |S|$
 We can also prove this without invoking Hall’s Marriage Theorem. We prove by contradiction that a
 maximum matching must include all nodes on the LHS.
 
-> image illustrating augmenting path
+![Increasing the size of the matching via Augmenting Paths]({{ "/assets/img/boxes_match.png"}})
 
-Proof. Suppose we have the optimum matching M which does not include a node $X_0$ on the LHS.
+_Proof._ Suppose we have the optimum matching M which does not include a node $X_0$ on the LHS.
 Let $X_0$ be incident to box $B_0$. If $B_0$ is not matched with any node in matching
 $ M $, then we can add the edge $X_0 \rightarrow B_0$ to $M$, increasing its cardinality
 (contradiction!).
@@ -138,6 +141,7 @@ were included in the path.
 
 Since we cannot continue building a path forever in a finite graph, the only conclusion is that $M$
 is not a maximum matching. Hence, any maximum matching must include $X_0$. This concludes the proof. 
+∎
 
 
 Putting it all together
