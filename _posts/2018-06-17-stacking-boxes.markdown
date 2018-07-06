@@ -62,7 +62,7 @@ Armed with this simple observation, we can rephrase the original problem. For ea
 we have to select either the width $(W)$ or the height $ (H) $, so that the number of distinct
 numbers is maximized.
 
-From this formulation, we can immediately get some observations. If either $W$ or $H$ does
+From this formulation, we can immediately make some progress. If either $W$ or $H$ does
 not appear as a dimension for another box, (say, $H$) then we can select $H$, add this to our
 final count, and forget about this box. Thus, we can assume that now we only have boxes where both
 $W$ and $H$ appear as widths or heights of other boxes.
@@ -147,7 +147,7 @@ is not a maximum matching. Hence, any maximum matching must include $X_0$. This 
 Putting it all together
 -----------------------
 
-Armed with our observations, we can now come up with an efficient algorithm to find the maximum
+We can now come up with an efficient algorithm to find the maximum
 stack. After constructing the graph, we proceed as follows:
 
  * As long as numbers have degree 1, we can include them in the solution and delete its
