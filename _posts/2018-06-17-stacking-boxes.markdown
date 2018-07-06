@@ -156,3 +156,48 @@ stack. After constructing the graph, we proceed as follows:
 
 The complexity of this solution is $\mathcal{O}(N \log N)$.
 
+```python
+from collections import Counter, defaultdict, deque
+
+def stack(boxes):
+    # create bipartite graph from nums to boxes
+    degree = Counter()
+    num_to_box = defaultdict(list)
+    for bi, box in enumerate(boxes):
+        for dim in box:
+            degree[dim] += 1
+            num_to_box[dim].append(bi)
+
+    stack_size = 0        # count of the stack we build
+    deleted_boxes = set() # keep track of the boxes we include in the stack
+    # leaves are the nums adjacent to a single box
+    leaves = deque([x for x, d in degree.items() if d == 1])
+
+    # keep including nums from 'leaves' in our stack
+    while leaves:
+        leaf = leaves.pop()
+
+        # it's possible the leaf's box was deleted
+        if degree[leaf] <= 0:
+            continue
+
+        stack_size += 1 # yep, we can include it in the stack!
+
+        # delete the leaf's supporting box since it was included
+        for bi in num_to_box[leaf]:
+            if bi in deleted_boxes: # this box was already deleted
+                continue;
+            deleted_boxes.add(bi)
+
+            for dim in boxes[bi]:
+                degree[dim] -= 1
+                if degree[dim] == 1: # we might have created a new leaf
+                    leaves.append(dim)
+
+    # all remaining numbers can be included since degree of each number is >= 2
+    # and boxes all have degree 2, and we can get a matching saturating the LHS
+    stack_size += sum([1 for x, d in degree.items() if d > 0])
+
+    return stack_size
+```
+
